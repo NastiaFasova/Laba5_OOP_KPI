@@ -1,8 +1,10 @@
 package homework;
 
-import lombok.ToString;
+import lombok.*;
 
-@ToString
+@EqualsAndHashCode(callSuper = true)
+@Data
+@AllArgsConstructor
 public class Smartphone extends Phone {
     private double processFrequency;
     private int coresNumber;
@@ -13,16 +15,6 @@ public class Smartphone extends Phone {
 
     public Smartphone(PhoneTitle title, double weight, double diagonal, long memorySize, boolean camera) {
         super(title, weight, diagonal, memorySize, camera);
-    }
-
-    public Smartphone(PhoneTitle title, double weight,
-                      double diagonal, long memorySize,
-                      boolean camera, double processFrequency,
-                      int coresNumber, int RAMAmount) {
-        super(title, weight, diagonal, memorySize, camera);
-        this.processFrequency = processFrequency;
-        this.coresNumber = coresNumber;
-        this.RAMAmount = RAMAmount;
     }
 
     @OwnAnnotation

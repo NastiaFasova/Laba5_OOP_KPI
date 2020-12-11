@@ -1,25 +1,18 @@
 package homework;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Phone implements Callable<Phone>, Messagable<Phone>{
     private PhoneTitle title;
     private double weight;
     private double diagonal;
     private long memorySize;
     private boolean camera;
-
-    public Phone() {
-    }
-
-    public Phone(PhoneTitle title, double weight, double diagonal, long memorySize, boolean camera) {
-        this.title = title;
-        this.weight = weight;
-        this.diagonal = diagonal;
-        this.memorySize = memorySize;
-        this.camera = camera;
-    }
 
     @OwnAnnotation
     public Phone writeMessage(String message) {
